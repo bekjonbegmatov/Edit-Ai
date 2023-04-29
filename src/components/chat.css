@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+body{
+    background-color: rgb(18, 96, 103);
+    color: white;
+}
+.header{
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content:center;
+    
+}
+.to_vniz{
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
+.fleks{
+    display: flex;
+    justify-content: center;
+}
