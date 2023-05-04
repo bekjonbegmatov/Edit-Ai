@@ -8,7 +8,7 @@ function Chat() {
     useEffect(() => {
         // change_message()
     }, [])
-    const [apiKey, setApikey] = useState('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')
+    const [apiKey, setApikey] = useState('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') //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
     const [prompt, setPrompt] = useState('') // Prompt of user or like a search 
     const [resul, setResul] = useState('')
     const [len_tokens, setLen_token] = useState('1')
