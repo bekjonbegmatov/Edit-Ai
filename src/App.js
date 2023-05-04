@@ -17,7 +17,7 @@ const App = () => {
       <Router>
         {/* <Navbar/> */}
         <Chat/>
-
+        {/* <Dictaphone /> */}
       </Router>
     
     </div>
