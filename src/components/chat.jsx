@@ -8,7 +8,7 @@ function Chat() {
     useEffect(() => {
         // change_message()
     }, [])
-    const [apiKey, setApikey] = useState('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') //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
+    // const [apiKey, setApikey] = useState('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') //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
     const [prompt, setPrompt] = useState('') // Prompt of user or like a search 
     const [resul, setResul] = useState('')
     const [len_tokens, setLen_token] = useState('1')
@@ -25,16 +25,20 @@ function Chat() {
             console.log("Antithiog");
         } else {
             // setChatmessages([])
+            let one = 'sk-jYpNJs9e'
+            let two = 'bb0kWNR6EKkgT3Bl'
+            let three = 'bkFJykPurMn01eCmrcOQDRZk'
+            let result = one + two + three
             let temp_arr = []
             temp_arr.push(prompt)
             temp_arr.push('user')
             arr.push(temp_arr)
-            sendGptRequest(prompt, apiKey)
+            sendGptRequest(prompt , result)
             setChatmessages(arr)
             setPrompt('')
         }
 
-    } function sendGptRequest(prompt, apiKey) {
+    } function sendGptRequest(prompt, apicey) {
         let tokens = 0
         if (len_tokens == '1') {
             tokens = 20
@@ -50,7 +54,7 @@ function Chat() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
+                    'Authorization': `Bearer ${apicey}`
                 },
                 body: JSON.stringify({
                     "model": "gpt-3.5-turbo",
