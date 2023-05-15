@@ -1,26 +1,30 @@
-.user{
+.user {
     text-align: right;
     color: #000;
     margin-left: 5%;
 }
-.chatgp{
+
+.chatgp {
     text-align: left;
     color: #000;
     margin-right: 5%;
 }
-.joy{
+
+.joy {
     height: 40%;
 }
-.odamoti{
+
+.odamoti {
     padding-bottom: -5px;
     color: aliceblue;
     border: 1px solid #fff;
     border-radius: 10px;
     width: 60px;
     padding-left: 5px;
-    background-color: rgb(211, 108, 108);
+    background-color: rgb(255, 0, 0);
 }
-.odamoti_user{
+
+.odamoti_user {
     text-align: right;
     padding-bottom: -5px;
     color: aliceblue;
@@ -30,4 +34,14 @@
     background-color: rgb(131, 133, 241);
     margin-left: 85%;
     padding-right: 5px;
+}
+
+.chat_message {
+    background-color: rgb(87, 245, 44);
+    box-shadow: 5px 4px 0.5px rgb(255, 255, 255);
+}
+
+.user_message {
+    background-color: rgb(248, 248, 248);
+    box-shadow: 5px 4px 0.5px rgb(87, 245, 44);
 }

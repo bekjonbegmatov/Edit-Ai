@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="chat()">GET</button>
+    <script>
+        function chat() {
+            fetch("https://edithai.pythonanywhere.com/chat/edith/v1", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    content: 'hello',
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                });
+        }
+    </script>
+</body>
+
+</html>
