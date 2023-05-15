@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/Edit-Ai/static/css/main.7a66e7bd.chunk.css",
-    "main.js": "/Edit-Ai/static/js/main.c71bfe54.chunk.js",
-    "main.js.map": "/Edit-Ai/static/js/main.c71bfe54.chunk.js.map",
+    "main.css": "/Edit-Ai/static/css/main.a6196ceb.chunk.css",
+    "main.js": "/Edit-Ai/static/js/main.eed0c675.chunk.js",
+    "main.js.map": "/Edit-Ai/static/js/main.eed0c675.chunk.js.map",
     "runtime-main.js": "/Edit-Ai/static/js/runtime-main.6459c961.js",
     "runtime-main.js.map": "/Edit-Ai/static/js/runtime-main.6459c961.js.map",
-    "static/js/2.f4d6f955.chunk.js": "/Edit-Ai/static/js/2.f4d6f955.chunk.js",
-    "static/js/2.f4d6f955.chunk.js.map": "/Edit-Ai/static/js/2.f4d6f955.chunk.js.map",
+    "static/js/2.06afa581.chunk.js": "/Edit-Ai/static/js/2.06afa581.chunk.js",
+    "static/js/2.06afa581.chunk.js.map": "/Edit-Ai/static/js/2.06afa581.chunk.js.map",
     "index.html": "/Edit-Ai/index.html",
-    "static/css/main.7a66e7bd.chunk.css.map": "/Edit-Ai/static/css/main.7a66e7bd.chunk.css.map",
-    "static/js/2.f4d6f955.chunk.js.LICENSE.txt": "/Edit-Ai/static/js/2.f4d6f955.chunk.js.LICENSE.txt",
+    "static/css/main.a6196ceb.chunk.css.map": "/Edit-Ai/static/css/main.a6196ceb.chunk.css.map",
+    "static/js/2.06afa581.chunk.js.LICENSE.txt": "/Edit-Ai/static/js/2.06afa581.chunk.js.LICENSE.txt",
+    "static/media/chat.css": "/Edit-Ai/static/media/background.70203a4b.png",
     "static/media/edith.f180005b.png": "/Edit-Ai/static/media/edith.f180005b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6459c961.js",
-    "static/js/2.f4d6f955.chunk.js",
-    "static/css/main.7a66e7bd.chunk.css",
-    "static/js/main.c71bfe54.chunk.js"
+    "static/js/2.06afa581.chunk.js",
+    "static/css/main.a6196ceb.chunk.css",
+    "static/js/main.eed0c675.chunk.js"
   ]
 }
