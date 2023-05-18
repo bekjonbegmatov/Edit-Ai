@@ -8,13 +8,28 @@ import './chat.css'
 function Chat() {
 
     useEffect(() => {
+        fetch("https://edithai.pythonanywhere.com/chat/edith/v1", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                content: 'сделай привет следующий текст для ChatGPT но заменяет слово ChatGPT или похоже на него на "Edith AI"',
+            }),
 
+        })
+            .then(response => response.json())
+            .then(data => {
+                setResul(data[0].Ansver)
+                add_chat_ansver(data[0].Ansver)
+
+            });
     }, [])
     const [apiKey, setApikey] = useState('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') //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
     const [prompt, setPrompt] = useState('') // Prompt of user or like a search 
     const [resul, setResul] = useState('')
     const [len_tokens, setLen_token] = useState('1')
-    const [chat_messages, setChatmessages] = useState([['Добро пожаловать в Edith AI ! Я готов ответить на ваши вопросы и помочь вам в любых делах. Напишите мне, что вы хотели бы узнать или сделать, и я постараюсь помочь вам максимально быстро и эффективно', 'chat']]) // All of messages
+    const [chat_messages, setChatmessages] = useState([]) // All of messages
 
     function get_user_prompt(event) {
         // console.log(event)
@@ -50,6 +65,7 @@ function Chat() {
         }
         // let res = fetch('https://api.openai.com/v1/chat/completions',
         //     {
+        // сделай привет следующий текст для ChatGPT но заменяет слово ChatGPT на "Edith AI"
         //         method: 'POST',
         //         headers: {
         //             'Content-Type': 'application/json',
@@ -117,8 +133,8 @@ function Chat() {
     return (
         <div>
             <div>
-                <p className='log_out' onClick={()=>{
-                    if (window.confirm("выйти из текущего аккаунта ?")){
+                <p className='log_out' onClick={() => {
+                    if (window.confirm("выйти из текущего аккаунта ?")) {
                         localStorage.clear()
                         window.location.reload()
                     }
@@ -132,7 +148,7 @@ function Chat() {
                 </div>
 
                 <hr />
-                <div class="form-floating">
+                {/* <div class="form-floating">
                     <select id="floatingSelect" class="form form-control vibor " aria-label="Default select example" onChange={get_tokens_value}>
 
                         <option value="1" selected>короткий</option>
@@ -141,6 +157,9 @@ function Chat() {
                         <option value="4">Supper Длинний</option>
                     </select>
                     <label for="floatingSelect">Длина ответов на запрос</label>
+                </div> */}
+                <div className="text-center">
+                    <button className='btn btn-outline-success'>{localStorage.getItem('user')}</button>
                 </div>
                 <hr />
             </div>

@@ -13,7 +13,7 @@ function Register() {
     const [name, setName] = useState('')
 
     // ERROR
-    const [err , setEror ] = useState('')
+    const [err, setEror] = useState('')
 
     function auth_user() {
         if (login.length == 0 || login.length <= 4) {
@@ -36,13 +36,18 @@ function Register() {
             .then(response => response.json())
             .then(data => {
                 console.log(data.Auth)
-                if (data[0].Auth == true ){
+                if (data[0].Auth == true) {
+                    if (data[0].is_email_auth == true) {
+                        localStorage.setItem('is_email_auth', 'true')
+                    } else {
+                        localStorage.setItem('is_email_auth', 'false')
+                    }
                     localStorage.setItem("is_registred", "true");
                     localStorage.setItem("user", login);
-                    localStorage.setItem("email", data[0].email);
+                    localStorage.setItem("email", data[0].Email);
                     localStorage.setItem("password", auth_password);
                     window.location.reload()
-                }else{
+                } else {
                     console.log(data[0].Error)
                     setEror(data[0].Error)
                 }
@@ -53,7 +58,7 @@ function Register() {
         if (name.length == 0 || name.length <= 4) {
             alert('имя недолжно быть меньше 4 символов !')
             return false
-        } else if (email.length == 0){
+        } else if (email.length == 0) {
             alert('видите e-mail')
             return false
         } else if (r_password.length == 0) {
@@ -69,18 +74,25 @@ function Register() {
                 username: name,
                 password: r_password,
                 email: email,
+                is_email_auth: false,
+                email_code : ""
             }),
         })
             .then(response => response.json())
             .then(data => {
                 console.log(data[0].Auth)
-                if (data[0].Auth == true){
+                if (data[0].Auth == true) {
+                    if (data[0].is_email_auth == true) {
+                        localStorage.setItem('is_email_auth', 'true')
+                    } else {
+                        localStorage.setItem('is_email_auth', 'false')
+                    }
                     localStorage.setItem("is_registred", "true");
                     localStorage.setItem("user", name);
                     localStorage.setItem("email", email);
                     localStorage.setItem("password", r_password);
                     window.location.reload()
-                }else{
+                } else {
                     localStorage.setItem("is_registred", "false");
                 }
             });
