@@ -134,7 +134,7 @@ function Register() {
                     <p onClick={() => {
                         let emai = prompt("введите ваш e-mail")
                         if (emai != null && emai.length != 0) {
-                            fetch('http://edithai.pythonanywhere.com/user/password/resend', {
+                            fetch('https://edithai.pythonanywhere.com/user/password/resend', {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",
