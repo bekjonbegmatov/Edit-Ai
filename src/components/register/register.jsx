@@ -75,7 +75,7 @@ function Register() {
                 password: r_password,
                 email: email,
                 is_email_auth: false,
-                email_code : ""
+                email_code: ""
             }),
         })
             .then(response => response.json())
@@ -131,6 +131,24 @@ function Register() {
                             setIs_register(true)
                         }
                     }}>Регистрация</i></p>
+                    <p onClick={() => {
+                        let emai = prompt("введите ваш e-mail")
+                        if (emai != null && emai.length != 0) {
+                            fetch('http://edithai.pythonanywhere.com/user/password/resend', {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({
+                                    email : emai
+                                }),
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                alert(data[0].message)
+                            })
+                        }
+                    }}>забыли пароль</p>
                     <button onClick={auth_user} className='btn btn-light'>войти</button>
                 </div>
             }{is_register &&

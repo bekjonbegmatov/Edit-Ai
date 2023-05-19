@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import Auth_email from "./components/auth_email/authemail";
 
+import GlassParticleAnimation from "./components/logoanimation";
+
 const App = () => {
   const [is_reg, setIs_reg] = useState(false)
   const [is_email_auth, setIs_email_auth] = useState(false)
@@ -37,6 +39,7 @@ const App = () => {
         }{is_email_auth == false && is_reg && 
           <Auth_email />
         }
+        {/* <GlassParticleAnimation /> */}
       </Router>
 
     </div>
