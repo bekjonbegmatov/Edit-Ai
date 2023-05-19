@@ -40,7 +40,7 @@ function Auth_email() {
             <input onChange={get_email_code} type="text" className='form form-control' maxlength='6' placeholder='-  -  -  -  - ' />
             <i> введите код который отправлен на ваш e-mail</i>
             <br /><br />
-            <button className='btn btn-light' onClick={()=>{localStorage.clear();window.location.reload()}}>назад</button>
+            <button className='btn btn-light ml-3' onClick={()=>{localStorage.clear();window.location.reload()}}>назад</button>
             <button className='btn btn-light' onClick={confirm_email}>подтвердить</button>
         </div>
     );
