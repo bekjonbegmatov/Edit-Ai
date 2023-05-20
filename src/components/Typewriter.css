@@ -8,18 +8,9 @@
     }
 }
 
-/* .Typewriter {
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    border-right: .15em solid #fff;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
-} */
+.Typewriter {
+    white-space: pre-wrap
+}
 
 @keyframes blink-caret {
 
