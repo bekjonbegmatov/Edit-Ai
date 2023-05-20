@@ -15,6 +15,8 @@ function Chat() {
             },
             body: JSON.stringify({
                 content: 'привет',
+                arr: chat_messages,
+                is_context: 'true'
             }),
         })
             .then(response => response.json())
@@ -61,7 +63,7 @@ function Chat() {
         } else if (len_tokens == '4') {
             tokens = 1000
         }
-        fetch("http://127.0.0.1:8000/chat/edith/v1", {
+        fetch("https://edithai.pythonanywhere.com/chat/edith/v1", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
