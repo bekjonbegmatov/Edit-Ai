@@ -14,15 +14,13 @@ function Chat() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                content: 'сделай привет следующий текст для ChatGPT но заменяет слово ChatGPT или похоже на него на "Edith AI"',
+                content: 'привет',
             }),
-
         })
             .then(response => response.json())
             .then(data => {
                 setResul(data[0].Ansver)
                 add_chat_ansver(data[0].Ansver)
-
             });
     }, [])
     const [apiKey, setApikey] = useState('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') //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
@@ -63,44 +61,15 @@ function Chat() {
         } else if (len_tokens == '4') {
             tokens = 1000
         }
-        // let res = fetch('https://api.openai.com/v1/chat/completions',
-        //     {
-        // сделай привет следующий текст для ChatGPT но заменяет слово ChatGPT на "Edith AI"
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Authorization': `Bearer ${apicey}`
-        //         },
-        //         body: JSON.stringify({
-        //             "model": "gpt-3.5-turbo",
-        //             "messages": [
-        //                 {
-        //                     "role": "user",
-        //                     "content": prompt
-        //                 }
-        //             ],
-        //             "temperature": 1,
-        //             "max_tokens": tokens,
-        //             "top_p": 1,
-        //             "temperature": 0.5,
-        //             "frequency_penalty": 0,
-        //             "presence_penalty": 0
-        //         })
-        //     }
-        // )
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         setResul(data.choices[0].message.content)
-        //         add_chat_ansver(data.choices[0].message.content)
-
-        //     });
-        fetch("https://edithai.pythonanywhere.com/chat/edith/v1", {
+        fetch("http://127.0.0.1:8000/chat/edith/v1", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 content: prompt,
+                arr: chat_messages,
+                is_context: 'true'
             }),
 
         })
@@ -108,13 +77,15 @@ function Chat() {
             .then(data => {
                 setResul(data[0].Ansver)
                 add_chat_ansver(data[0].Ansver)
-
+                localStorage.setItem('last_result_of_ai', data[0].Ansver)
             });
+
+
     } function add_chat_ansver(resul) {
         let arr = chat_messages
         let temp_arr = []
         temp_arr.push(resul)
-        temp_arr.push('chat')
+        temp_arr.push('assistant')
         arr.push(temp_arr)
         // setChatmessages([])
         setChatmessages(arr)
@@ -148,18 +119,9 @@ function Chat() {
                 </div>
 
                 <hr />
-                {/* <div class="form-floating">
-                    <select id="floatingSelect" class="form form-control vibor " aria-label="Default select example" onChange={get_tokens_value}>
-
-                        <option value="1" selected>короткий</option>
-                        <option value="2">Средний</option>
-                        <option value="3">Длинний</option>
-                        <option value="4">Supper Длинний</option>
-                    </select>
-                    <label for="floatingSelect">Длина ответов на запрос</label>
-                </div> */}
-                <div className="text-center">
+                <div className="text-center flex">
                     <button className='btn btn-outline-success'>{localStorage.getItem('user')}</button>
+
                 </div>
                 <hr />
             </div>
