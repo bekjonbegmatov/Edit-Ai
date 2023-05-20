@@ -16,7 +16,7 @@ function Chat() {
             body: JSON.stringify({
                 content: 'привет',
                 arr: chat_messages,
-                is_context: 'true'
+                is_context: 'false'
             }),
         })
             .then(response => response.json())
