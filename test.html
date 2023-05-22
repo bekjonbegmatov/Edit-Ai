@@ -1,32 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <button onclick="chat()">GET</button>
-    <script>
-        function chat() {
-            fetch("https://edithai.pythonanywhere.com/chat/edith/v1", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    content: 'hello',
-                }),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                });
-        }
-    </script>
-</body>
-
+    <title>Страница, созданная с помощью Edith Ai</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+      }
+      nav {
+        background-color: #f1f1f1;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      a {
+        display: inline-block;
+        padding: 5px 10px;
+        color: #333;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #fff;
+        background-color: #333;
+      }
+      main {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+      }
+      article {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      h1, h2, h3 {
+        font-size: 28px;
+        color: #333;
+        margin: 5px 0;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+        margin: 10px 0;
+      }
+      img {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Добро пожаловать на мою страницу!</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+    <main>
+      <article>
+        <h2>Эта страница создана с помощью Edith Ai</h2>
+        <p>Edith Ai - это уникальный сервис, который использует искусственный интеллект для создания качественного контента для веб-страниц.</p>
+        <p>На этой странице вы можете увидеть пример того, как можно добавлять разные элементы на страницу, такие как заголовки, списки, статьи, ссылки и т.д.</p>
+        <img src="https://bekjonbegmatov.github.io/Edit-Ai/static/media/edith.f180005b.png" alt="Edith Ai" style="display: block; width: 100%; max-width: 500px; height: auto; margin: 20px auto; border-radius: 5px; box-shadow: 0 0 5px #ccc;">
+      </article>
+    </main>
+    <footer>
+      <p>© 2023 Edith Ai. Все права защищены.</p>
+    </footer>
+  </body>
 </html>
