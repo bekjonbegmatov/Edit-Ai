@@ -40,8 +40,6 @@ function Chat() {
         if (prompt.length == 0) {
             console.log("Antithiog");
         } else {
-            // https://edithai.pythonanywhere.com/
-            // setChatmessages([])
             let result = apiKey
             let temp_arr = []
             temp_arr.push(prompt)
