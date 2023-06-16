@@ -14,7 +14,7 @@ function Register() {
 
     // ERROR
     const [err, setEror] = useState('')
-
+    const [is_press, setIs_press] = useState(false)
     function auth_user() {
         if (login.length == 0 || login.length <= 4) {
             alert('логен не должно быть меньше 4 символов !')
@@ -55,6 +55,9 @@ function Register() {
 
 
     } function register_user() {
+        if (is_press) {
+            return false
+        }
         if (name.length == 0 || name.length <= 4) {
             alert('имя недолжно быть меньше 4 символов !')
             return false
@@ -96,6 +99,7 @@ function Register() {
                     localStorage.setItem("is_registred", "false");
                 }
             });
+        setIs_press(true)
     } function get_login(event) {
         let login = event.target.value
         setLogin(login)
@@ -140,13 +144,13 @@ function Register() {
                                     "Content-Type": "application/json",
                                 },
                                 body: JSON.stringify({
-                                    email : emai
+                                    email: emai
                                 }),
                             })
-                            .then(response => response.json())
-                            .then(data => {
-                                alert(data[0].message)
-                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    alert(data[0].message)
+                                })
                         }
                     }}>забыли пароль</p>
                     <button onClick={auth_user} className='btn btn-light'>войти</button>
